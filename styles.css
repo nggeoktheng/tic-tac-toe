@@ -1,41 +1,108 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+*, 
+*::before, 
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --font-family: 'Special Elite', 'cursive', sans-serif;
+    --cell-size: 120px;
+    --mark-size: calc(var(--cell-size) * 0.8);
+}
+
 body {
+    font-family: var(--font-family);
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .title {
-    margin: 3rem 0;
+    margin: 4rem 0;
 }
 
-.gameboard {
-    width: 450px;
-    height: 450px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+.board {
+    display: none;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 3px;
+    background-color: black;
 }
 
-.item {
-    width: 150px;
-    height: 150px;
-    border: 1px solid red;
-
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
     display: grid;
     place-items: center;
-    font-size: 3rem;
+    position: relative;
+    background-color: white;
 }
 
-.start-btn {
-    margin: 2rem 0;
-    padding: 0.3rem;
+.cell.x::before,
+.cell.x::after {
+    content: '';
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+    position: absolute;
+    background-color: black;
+}
+
+.cell.x:before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+}
+
+.cell.circle::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: black;
+}
+
+.cell.cell.circle::after {
+    width: calc(var(--mark-size) * 0.7);
+    height: calc(var(--mark-size) * 0.7);
+    background-color: white;
+}
+
+.player1 {
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+}
+
+button {
+    font-family: var(--font-family);
+    margin: 3rem 0;
+    padding: 0.5rem;
     font-size: 1.3rem;
     background-color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+#restart-btn {
+    display: none;
+}
+
+#display-message-element {
+    font-size: 2.5rem;
 }

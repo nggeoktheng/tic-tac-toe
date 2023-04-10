@@ -11,18 +11,28 @@
     <header>
         <h1 class="title">Tic Tac Toe</h1>
     </header>
-    <div class="gameboard">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+    <div class="board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
     </div>
-    <button type="button" class="start-btn">START</button>
+    <div class="player1">
+        <label for="player1">Player 1:</label>
+        <input type="text" id="player1" placeholder="Name">
+    </div>
+    <div class="player2">
+        <label for="player2">Player 2:</label>
+        <input type="text" id="player2" placeholder="Name">
+    </div>
+    <button type="button" id="start-btn">START</button>
+    <button type="button" id="restart-btn">RESTART</button>
+    <div id="display-message-element"></div>
     <script src="script.js"></script>
 </body>
 </html>

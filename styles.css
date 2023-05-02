@@ -34,8 +34,7 @@ body {
 }
 
 .board {
-    display: none;
-    /* display: grid; */
+    display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
     grid-gap: 3px;
@@ -92,16 +91,6 @@ body {
     background-color: white;
 }
 
-.player1 {
-    margin-bottom: 1.2rem;
-}
-
-#display-result-element {
-    display: none;
-    font-size: 2.5rem;
-    margin-top: 3rem;
-}
-
 button {
     font-family: var(--font-family);
     margin: 3rem 0;
@@ -114,8 +103,4 @@ button {
 button:hover {
     background-color: black;
     color: white;
-}
-
-#restart-btn {
-    display: none;
 }

@@ -1,6 +1,5 @@
 const gameBoard = (() => {
     const displayMessageElement = document.getElementById('display-message-element');
-    const board = document.getElementById('board');
     const cells = document.querySelectorAll('.cell');
     const restartBtn = document.getElementById('restart-btn');
 
